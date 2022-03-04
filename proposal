@@ -1,0 +1,68 @@
+Anime Character Generator Based on StyleGAN2
+Chen Yihua 3035661346, Wong Kin Lok 3035573800
+Objective
+We plan to train a model based on “StyleGAN2” implemented on a webpage that generates unique and customizable 2D anime characters to be used as references for artists. There will be a variety of continuously adjustable features for generating new characters, such as “glasses”, “hair length”, “smile”, etc. Figure 1 shows an example that we want to achieve for our final product yet differing in adjustable options.
+
+Figure 1, A screenshot from Artbreeder
+Target Application
+Creating artworks like illustrations or comics often involves making a number of original characters from scratch. It is easy for artists to come up with the first few characters with diverse features, but when the number of characters increases it turns out to be more difficult. To avoid similarity and amplify diversity, we plan to build this model to generate unique characters with customizable features and hopefully provide to artists as their inspirations of brainstorming.
+Dataset
+“Crypko Data”: https://www.kaggle.com/shilou/crypko-data
+We plan to use this dataset from Kaggle, consisting of about 71,300 face images. 
+Since the images are not tagged according to their features, we need to preprocess the dataset. Due to the large number of images, obviously it is impossible to label them manually. Therefore, we plan to train several sub models to classify the images and create tags for each of them. For example, we will train and apply a sub model for emotion classification.
+
+Figure 2, A glimpse of the dataset
+Methodology
+We will be training a GAN model, specifically the variation StyleGAN2.
+
+Figure 3, Framework of GAN (Rashad, 2020)
+
+A Generative Adversarial Network (GAN) is able to generate new content with the same statistics as the training dataset. Figure 2 shows the framework of GAN, which consists of two sub networks, a generator and a discriminator. The former generates fake images while the latter evaluates and distinguishes them from real images. The weights of two sub networks are then updated based on the loss.
+StyleGAN2 is a GAN based network with a modified inner architecture which allows it to adjust different levels of features of the generated images from the “coarse” details (eg. glasses) to “finer” details (eg. hair color). The model will initially be trained at 4x4 resolution. After stabilizing, layers with higher resolution (8x8, 16x16, 32x32, 64x64, 128x128, 256x256, 512x512, 1024x1024) are gradually added to the model. This is to accelerate the training process and also make the model stable and robust (Rashad, 2020).
+Tools
+Programming language: Python, Framework: Pytorch 
+Timeline
+Date
+Task
+Description
+Labor division
+02/23 - 03/12
+Dataset preprocessing
+①Create training and testing dataset for sub classifications of features (hair_length, blush, smile, mouth_open)
+②Create training and testing dataset for sub classifications of features (Hat, ribbon, glasses, eye_color)
+③Labelling task including training, classifying and labeling (hair_length, blush, smile, mouth_open)
+④Labelling task including training, classifying and labeling (Hat, ribbon, glasses, eye_color)
+
+
+①③: C
+②④: W
+03/13 - 03/16
+Model training/tuning①
+Train the model at 4x4, 8x8, 16x16, 32x32, 64x64 resolution
+C
+03/17 - 03/21
+Model training/tuning②
+Train the model at 128x128, 256x256 resolution
+W
+03/22 - 03/26
+Model training/tuning③
+Train the model at 512x512 resolution
+C
+03/27 - 03/31
+Model training/tuning④
+Train the model at 1024x1024 resolution
+W
+04/01 - 04/10
+Web Page construction
+Build a webpage and implement the model
+C, W
+04/11 - 04/19
+Final changes
+Make final changes to the model and the webpage
+C, W
+
+C: Chen Yihua, W:Wong Kin Lok
+References
+Liu, Z. (2020, July 18). Generating Full-Body Standing Figures of Anime Characters and Its Style Transfer by GAN. Retrieved February 15, 2022, from https://www.ams.giti.waseda.ac.jp/data/pdf-files/2020_zepengliu_mt.pdf
+Rashad, F. (2020, October 27). Generating anime characters with StyleGAN2. Medium. Retrieved February 15, 2022, from https://towardsdatascience.com/generating-anime-characters-with-stylegan2-6f8ae59e237b
+
