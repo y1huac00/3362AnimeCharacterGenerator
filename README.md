@@ -33,3 +33,11 @@ nvcc test_nvcc.cu -o test_nvcc -run
 ```
 
 On Windows, the compilation requires Microsoft Visual Studio to be in `PATH`. We recommend installing [Visual Studio Community Edition](https://visualstudio.microsoft.com/vs/) and adding into `PATH` using `"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"`.
+
+
+## How to play?
+1 Clone the whole git repository including the sub-module stylegan2
+2 Prepare an environment according to Requirement
+3 Lauching Jupyter notebook and open anime_character_generator.ipynb
+4 Run all codeblocks and pip install any packages that is required
+5 Start to play!!
