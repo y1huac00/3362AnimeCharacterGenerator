@@ -38,7 +38,7 @@ On Windows, the compilation requires Microsoft Visual Studio to be in `PATH`. We
 
 
 ## How to play?
-1. Clone the whole git repository including the sub-module stylegan2
+1. Clone the whole git repository including the sub-module stylegan2, download the stylegan2 model in 'Release' section
 2. Prepare an environment according to Requirement
 3. Lauch your Jupyter notebook and open anime_character_generator.ipynb
 4. Run all codeblocks and pip install any packages that is required
