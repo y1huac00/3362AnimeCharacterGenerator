@@ -1,5 +1,7 @@
 # 3362AnimeCharacterGenerator
 
+![Preview](https://github.com/y1huac00/3362AnimeCharacterGenerator/blob/main/image.png)
+
 ## Objective
 We plan to train a model based on “StyleGAN2” implemented on a webpage that generates unique and customizable 2D anime characters to be used as references for artists. There will be a variety of continuously adjustable features for generating new characters, such as “glasses”, “hair length”, “smile”, etc. Figure 1 shows an example that we want to achieve for our final product yet differing in adjustable options.
 
